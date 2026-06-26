@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitti 3.0</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-title">Chats</div>
+                <button class="new-chat-btn" onclick="startNewChat()">+ New chat</button>
+            </div>
+            <div class="theme-picker">
+                <button class="theme-toggle" id="theme-toggle">🎨 Themes</button>
+                <div class="theme-menu" id="theme-menu">
+                    <button class="theme-option" data-theme="default">Default Blue</button>
+                    <button class="theme-option" data-theme="dark">Midnight Dark</button>
+                    <button class="theme-option" data-theme="green">Emerald Green</button>
+                    <button class="theme-option" data-theme="purple">Violet Glow</button>
+                </div>
+            </div>
+            <div class="history-list" id="history-list">
+                <div class="history-item active">
+                    <span class="history-title">Welcome chat</span>
+                    <div class="history-actions">
+                        <button class="rename-btn">Rename</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="chat-container">
+            <div class="header">
+                <div class="brand">
+                    <div class="avatar">🤖</div>
+                    <div>
+                        <h1>Chitti 3.0</h1>
+                        <p>Your friendly AI assistant</p>
+                    </div>
+                </div>
+                <span class="status-badge"><span class="status-dot"></span>Online</span>
+            </div>
+
+            <div id="chat-box">
+                <div class="bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-bubble">
+                        <div class="message-label">Chitti</div>
+                        <span>Hello! I’m Chitti, your friendly AI assistant. How can I help you today?</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="message" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
